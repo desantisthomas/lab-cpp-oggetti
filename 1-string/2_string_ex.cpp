@@ -8,8 +8,16 @@ using namespace std;
     TODO: stampa la lunghezza della string passata in input
 */
 void lunghezzaStringa(string stringa){
-    //modifica
-    cout << "Da implementare" << endl;
+
+     // .size()
+    int x = stringa.size();
+    cout << "La lunghezza della stringa è: " << x << endl;
+    cout << endl;
+
+     // .length()
+    int y = stringa.length();
+    cout << "La lunghezza della stringa è: " << y << endl;
+    cout << endl;
 
 }
 
@@ -20,9 +28,20 @@ void lunghezzaStringa(string stringa){
             altrimenti stampare "La parola ciao NON è presente"
 */
 void trovaCiao(string stringa){
+    // .find()
+    int z = stringa.find("ciao");
+    if(z!=-1)
+    {
+         cout << "La parola ciao e' presente" << endl;
+         cout << endl;
+    }
 
-    cout << "Da implementare" << endl;
-    
+    else
+    {
+        cout << "La parola ciao non e' presente" << endl;
+        cout << endl;
+    }
+
 }
 
 
@@ -31,9 +50,15 @@ void trovaCiao(string stringa){
     TODO: sostituire la parola "pizza" con la parola "pasta" e stampare la nuova stringa
 */
 void sostituisciPizzaConPasta(string stringa){
-    
-    cout << "Da implementare" << endl;
-    
+
+    // .replace()
+    stringa = "pizza";
+    cout << "Stringa prima di replace: " << stringa << endl;
+
+    stringa.replace(stringa.find("pizza"), stringa.length(), "pasta");
+    cout << "Stringa dopo replace: " << stringa << endl;
+    cout<< endl;
+
 }
 
 
@@ -45,9 +70,14 @@ void sostituisciPizzaConPasta(string stringa){
 */
 void stampaPrimaParola(string stringa){
     // TODO
+       int j=stringa.find(" ");
 
-    cout << "Da implementare" << endl;
-    
+       string s = stringa.substr(0, j);
+
+
+    cout << "Nuova stringa estratta: " << s << endl;
+    cout << endl;
+
 }
 
 
@@ -55,10 +85,13 @@ void stampaPrimaParola(string stringa){
     insert()
     TODO: inserire alla fine della stringa passata in input " Giovanni!" e stampare la nuova stringa
 */
-void aggiungiGiovanni(string frase){
+void aggiungiGiovanni(string stringa){
 
-    cout << "Da implementare" << endl;
-    
+// .insert()
+    stringa.insert(stringa.length(), " Giovanni!");
+    cout << "Stringa dopo insert: " << stringa << endl;
+    cout<< endl;
+
 }
 
 int main()
@@ -69,14 +102,11 @@ int main()
     cout << "Inserire valore stringa: ";
     getline(cin, str);
 
-
     lunghezzaStringa(str);
-    //trovaCiao(str);
-    //sostituisciPizzaConPasta(str);
-    //stampaPrimaParola(str);
-    //aggiungiGiovanni(str);
-    
-
+    trovaCiao(str);
+    sostituisciPizzaConPasta(str);
+    stampaPrimaParola(str);
+    aggiungiGiovanni(str);
 
     return 0;
 }
